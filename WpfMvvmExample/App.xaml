@@ -1,0 +1,23 @@
+﻿<Application x:Class="WpfMvvmExample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModels="clr-namespace:WpfMvvmExample.ViewModel"
+             xmlns:views="clr-namespace:WpfMvvmExample.View"
+             StartupUri="View/ApplicationView.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <viewModels:ViewModelLocator x:Key="Locator"/>
+
+            <!-- The view to show for each ViewModel is determined here -->
+            <DataTemplate DataType="{x:Type viewModels:HomeScreenViewModel}">
+                <views:HomeScreenView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:OtherScreenViewModel}">
+                <views:OtherScreenView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
